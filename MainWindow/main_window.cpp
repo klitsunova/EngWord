@@ -2,13 +2,13 @@
 
 MainWindow::MainWindow(QMainWindow* parent) : QMainWindow(parent),
                                               stacked_widgets_(new QStackedWidget(this)),
-                                              menu_(new Menu(this)) {
+                                              menu_(new Menu(this)),
+                                              keyEsc_(new QShortcut(Qt::Key_Escape, this, SLOT(close()))) {
   setMinimumSize(main_window_sizes::kScreenSizeDefault);
   setWindowTitle("Duolingo");
   setWindowIcon(QIcon("../resources/images/MainWindow/icon.svg"));
   SetWidgets();
   ConnectUI();
-
 }
 
 void MainWindow::SetWidgets() {
@@ -41,6 +41,10 @@ void MainWindow::ConnectUI() {
           &Menu::ExitButtonPressed,
           this,
           &MainWindow::close);
+  connect(keyEsc_,
+          SIGNAL(activated()),
+          this,
+          SLOT(slotShortcutEsc()));
 }
 
 void MainWindow::resizeEvent(QResizeEvent*) {
@@ -65,5 +69,33 @@ void MainWindow::AudioModStarted() {
 void MainWindow::MixedModStarted() {
 }
 
+void MainWindow::ReadSettings() {
+}
+
+void MainWindow::WriteSettings() {
+}
+
 void MainWindow::ShowSettings() {
+}
+
+bool MainWindow::checkExit() {
+  QMessageBox::StandardButton reply;
+  reply = QMessageBox::question(
+      this,
+      "Exit",
+      "Are you sure you want to exit?",
+      QMessageBox::No | QMessageBox::Yes);
+  if (reply == QMessageBox::Yes) {
+    return true;
+  }
+  return false;
+}
+
+void MainWindow::closeEvent(QCloseEvent* event) {
+  if (checkExit()) {
+    WriteSettings();
+    event->accept();
+  } else {
+    event->ignore();
+  }
 }

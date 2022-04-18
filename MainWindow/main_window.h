@@ -1,14 +1,19 @@
 #pragma once
 
-#include <QMainWindow>
-#include <QStackedWidget>
-#include <QPalette>
-#include <QColor>
 #include <QBrush>
+#include <QCloseEvent>
+#include <QColor>
+#include <QMainWindow>
+#include <QMessageBox>
+#include <QPalette>
+#include <QSettings>
+#include <QShortcut>
+#include <QStackedWidget>
 
-#include "helpers/sizes.h"
 #include "helpers/backgrounds.h"
-#include "menu.h"
+#include "helpers/sizes.h"
+
+#include "Views/menu.h"
 
 class MainWindow : public QMainWindow {
   Q_OBJECT
@@ -32,10 +37,18 @@ class MainWindow : public QMainWindow {
   //void StartExercise();
   //void ReturnToMainWindow();
 
+  void ReadSettings();
   void ShowSettings();
+  void WriteSettings();
   //void HideSettings();
+
+  bool checkExit();
+  void closeEvent(QCloseEvent* event) override;
 
   QStackedWidget* stacked_widgets_ = nullptr;
   Menu* menu_ = nullptr;
+  QSettings game_settings = QSettings("Klitsunova", "Duolingo");
   //EventsController* events_controller_ = nullptr;
+
+  QShortcut* keyEsc_;
 };

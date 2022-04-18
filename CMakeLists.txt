@@ -20,6 +20,7 @@ set(MODELS
         )
 
 set(VIEWS
+        Views/menu.cpp
         )
 
 set(CONTROLLERS
@@ -27,7 +28,6 @@ set(CONTROLLERS
 
 set(MAIN_WINDOW
         MainWindow/main_window.cpp
-        MainWindow/menu.cpp
         )
 
 set(SOURCES

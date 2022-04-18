@@ -1,4 +1,5 @@
 #include "menu.h"
+#include <QString>
 
 Menu::Menu(QWidget* parent) : QWidget(parent),
                               main_layout_(new QVBoxLayout(this)),
@@ -8,7 +9,9 @@ Menu::Menu(QWidget* parent) : QWidget(parent),
                               audio_mod_button_(new QPushButton("Audio Mode", this)),
                               mixed_mod_button_(new QPushButton("Mixed Mode", this)),
                               settings_button_(new QPushButton("Settings", this)),
-                              exit_button_(new QPushButton("Exit", this)) {
+                              exit_button_(new QPushButton("Exit", this)),
+                              score_label_(new QLabel("Score: ", this)) {
+  QString score_label_text = "Score: ";
   SetStyles();
   SetLayout();
   ConnectUI();
@@ -18,6 +21,7 @@ void Menu::SetStyles() {
   setMinimumSize(menu_sizes::kMenuSize);
   title_label_->setFont(fonts::kTitleFont);
   title_label_->setStyleSheet(styles::kTitleLabel);
+  score_label_->setStyleSheet(styles::kTitleLabel);
   for (auto& widget: children()) {
     auto* button_ptr = qobject_cast<QPushButton*>(widget);
     if (button_ptr != nullptr) {
@@ -32,6 +36,7 @@ void Menu::SetLayout() {
   main_layout_->setSpacing(menu_sizes::kMenuSpacing);
   main_layout_->addStretch(5);
   main_layout_->addWidget(title_label_, 1, Qt::AlignCenter);
+  main_layout_->addWidget(score_label_, 1, Qt::AlignRight);
   main_layout_->addStretch(10);
   main_layout_->addWidget(pick_mod_button_, 1, Qt::AlignCenter);
   main_layout_->addWidget(input_mod_button_, 1, Qt::AlignCenter);

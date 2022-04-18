@@ -2,6 +2,7 @@
 
 #include <QLabel>
 #include <QPushButton>
+#include <QSettings>
 #include <QVBoxLayout>
 #include <QWidget>
 
@@ -31,6 +32,7 @@ class Menu : public QWidget {
 
   QVBoxLayout* main_layout_ = nullptr;
   QLabel* title_label_ = nullptr;
+  QLabel* score_label_ = nullptr;
   QPushButton* pick_mod_button_ = nullptr;
   QPushButton* input_mod_button_ = nullptr;
   QPushButton* audio_mod_button_ = nullptr;
