@@ -20,10 +20,13 @@ set(MODELS
         )
 
 set(VIEWS
+        Views/menu.cpp
+        Views/settings_view.cpp
         )
 
 set(CONTROLLERS
-        )
+        Controllers/MainWindow/main_window.cpp
+        Controllers/settings.cpp)
 
 set(SOURCES
         main.cpp
