@@ -51,7 +51,7 @@ void MainWindow::ConnectUI() {
   connect(settings_view_,
           &SettingsView::CloseSettings,
           this,
-          &MainWindow::HideSettings);
+          &MainWindow::RestoreSettings);
 }
 
 void MainWindow::resizeEvent(QResizeEvent*) {
@@ -110,5 +110,10 @@ void MainWindow::SaveSettings() {
       settings_view_->GetLevelSettings(),
       settings_view_->GetSoundSettings(),
       settings_view_->GetScoreSettings());
+  HideSettings();
+}
+
+void MainWindow::RestoreSettings() {
+  settings_view_->GetSettingsView();
   HideSettings();
 }

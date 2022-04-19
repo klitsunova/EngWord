@@ -75,4 +75,13 @@ const QString kSwitchStyle =
 const QString kTitleLabel =
     "QLabel {"
     "color: white; }";
+
+const QString kContextMenu =
+    "QMenu { "
+    "background-color: #88D7FF;"
+    "border: 1px solid black; }"
+
+    "QMenu::item::selected {"
+    "background-color: #00A6F9; }";
+
 } // namespace styles

@@ -44,6 +44,7 @@ class MainWindow : public QMainWindow {
   //void ReturnToMainWindow();
 
   void SaveSettings();
+  void RestoreSettings();
 
   void closeEvent(QCloseEvent* event) override;
 
