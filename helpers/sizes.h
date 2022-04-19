@@ -12,7 +12,7 @@ namespace menu_sizes {
 
 constexpr QSize kMenuSize(800, 600);
 constexpr int kMenuSpacing = 16;
-constexpr QSize kSettingsSize(800, 600);
+constexpr QSize kSettingsSize(500, 400);
 
 } // namespace menu_sizes
 

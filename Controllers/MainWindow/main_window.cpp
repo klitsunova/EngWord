@@ -3,16 +3,19 @@
 MainWindow::MainWindow(QMainWindow* parent) : QMainWindow(parent),
                                               stacked_widgets_(new QStackedWidget(this)),
                                               menu_(new Menu(this)),
+                                              settings_view_(new SettingsView(this)),
                                               keyEsc_(new QShortcut(Qt::Key_Escape, this, SLOT(close()))) {
   setMinimumSize(main_window_sizes::kScreenSizeDefault);
   setWindowTitle("Duolingo");
   setWindowIcon(QIcon("../resources/images/MainWindow/icon.svg"));
+  menu_->SetScoreLabel(Settings::GetScoreString());
   SetWidgets();
   ConnectUI();
 }
 
 void MainWindow::SetWidgets() {
   stacked_widgets_->addWidget(menu_);
+  stacked_widgets_->addWidget(settings_view_);
   stacked_widgets_->setCurrentWidget(menu_);
 }
 
@@ -41,10 +44,14 @@ void MainWindow::ConnectUI() {
           &Menu::ExitButtonPressed,
           this,
           &MainWindow::close);
-  connect(keyEsc_,
-          SIGNAL(activated()),
+  connect(settings_view_,
+          &SettingsView::ApplyChanges,
           this,
-          SLOT(slotShortcutEsc()));
+          &MainWindow::SaveSettings);
+  connect(settings_view_,
+          &SettingsView::CloseSettings,
+          this,
+          &MainWindow::HideSettings);
 }
 
 void MainWindow::resizeEvent(QResizeEvent*) {
@@ -69,13 +76,12 @@ void MainWindow::AudioModStarted() {
 void MainWindow::MixedModStarted() {
 }
 
-void MainWindow::ReadSettings() {
-}
-
-void MainWindow::WriteSettings() {
-}
-
 void MainWindow::ShowSettings() {
+  stacked_widgets_->setCurrentWidget(settings_view_);
+}
+
+void MainWindow::HideSettings() {
+  stacked_widgets_->setCurrentWidget(menu_);
 }
 
 bool MainWindow::checkExit() {
@@ -93,9 +99,16 @@ bool MainWindow::checkExit() {
 
 void MainWindow::closeEvent(QCloseEvent* event) {
   if (checkExit()) {
-    WriteSettings();
     event->accept();
   } else {
     event->ignore();
   }
+}
+
+void MainWindow::SaveSettings() {
+  Settings::SetSettings(
+      settings_view_->GetLevelSettings(),
+      settings_view_->GetSoundSettings(),
+      settings_view_->GetScoreSettings());
+  HideSettings();
 }

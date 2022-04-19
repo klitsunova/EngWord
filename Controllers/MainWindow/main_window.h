@@ -3,6 +3,7 @@
 #include <QBrush>
 #include <QCloseEvent>
 #include <QColor>
+#include <QCoreApplication>
 #include <QMainWindow>
 #include <QMessageBox>
 #include <QPalette>
@@ -13,7 +14,10 @@
 #include "helpers/backgrounds.h"
 #include "helpers/sizes.h"
 
+#include "Controllers/settings.h"
+
 #include "Views/menu.h"
+#include "Views/settings_view.h"
 
 class MainWindow : public QMainWindow {
   Q_OBJECT
@@ -23,31 +27,30 @@ class MainWindow : public QMainWindow {
   ~MainWindow() override = default;
 
  private:
-  void resizeEvent(QResizeEvent*) override;
-
   void SetWidgets();
   void ConnectUI();
-  //void ConnectController();
+
+  void resizeEvent(QResizeEvent*) override;
 
   void PickModStarted();
   void InputModStarted();
   void AudioModStarted();
   void MixedModStarted();
+  void ShowSettings();
+  void HideSettings();
+  bool checkExit();
 
   //void StartExercise();
   //void ReturnToMainWindow();
 
-  void ReadSettings();
-  void ShowSettings();
-  void WriteSettings();
-  //void HideSettings();
+  void SaveSettings();
 
-  bool checkExit();
   void closeEvent(QCloseEvent* event) override;
 
   QStackedWidget* stacked_widgets_ = nullptr;
   Menu* menu_ = nullptr;
-  QSettings game_settings = QSettings("Klitsunova", "Duolingo");
+  SettingsView* settings_view_ = nullptr;
+
   //EventsController* events_controller_ = nullptr;
 
   QShortcut* keyEsc_;

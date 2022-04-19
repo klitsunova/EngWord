@@ -21,21 +21,18 @@ set(MODELS
 
 set(VIEWS
         Views/menu.cpp
+        Views/settings_view.cpp
         )
 
 set(CONTROLLERS
-        )
-
-set(MAIN_WINDOW
-        MainWindow/main_window.cpp
-        )
+        Controllers/MainWindow/main_window.cpp
+        Controllers/settings.cpp)
 
 set(SOURCES
         main.cpp
         ${MODELS}
         ${VIEWS}
-        ${CONTROLLERS}
-        ${MAIN_WINDOW})
+        ${CONTROLLERS})
 
 add_executable(Duolingo ${SOURCES})
 

@@ -8,10 +8,9 @@ Menu::Menu(QWidget* parent) : QWidget(parent),
                               input_mod_button_(new QPushButton("Input-Answer Mode", this)),
                               audio_mod_button_(new QPushButton("Audio Mode", this)),
                               mixed_mod_button_(new QPushButton("Mixed Mode", this)),
-                              settings_button_(new QPushButton("Settings", this)),
+                              settings_button_(new QPushButton("SettingsView", this)),
                               exit_button_(new QPushButton("Exit", this)),
-                              score_label_(new QLabel("Score: ", this)) {
-  QString score_label_text = "Score: ";
+                              score_label_(new QLabel(this)) {
   SetStyles();
   SetLayout();
   ConnectUI();
@@ -72,4 +71,8 @@ void Menu::ConnectUI() {
           &QPushButton::clicked,
           this,
           &Menu::ExitButtonPressed);
+}
+
+void Menu::SetScoreLabel(QString score) {
+  score_label_->setText("Score: " + score);
 }

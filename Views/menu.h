@@ -17,6 +17,8 @@ class Menu : public QWidget {
   explicit Menu(QWidget* parent = nullptr);
   ~Menu() override = default;
 
+  void SetScoreLabel(QString score);
+
  signals:
   void PickModButtonPressed();
   void InputModButtonPressed();
