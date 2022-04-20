@@ -45,7 +45,7 @@ class SettingsView : public QWidget {
   explicit SettingsView(QWidget* parent = nullptr);
   ~SettingsView() override = default;
 
-  Settings::level GetLevelSettings() const;
+  level GetLevelSettings() const;
   bool GetSoundSettings() const;
   int GetScoreSettings() const;
   void GetSettingsView();

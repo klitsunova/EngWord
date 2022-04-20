@@ -1,0 +1,199 @@
+{
+    "words": [
+        {
+            "text": "amusement",
+            "translation": "\u0440\u0430\u0437\u0432\u043b\u0435\u0447\u0435\u043d\u0438\u0435",
+            "audio": "../resources/words/audio/amusement.mp3"
+        },
+        {
+            "text": "autonomy",
+            "translation": "\u0430\u0432\u0442\u043e\u043d\u043e\u043c\u0438\u044f",
+            "audio": "../resources/words/audio/autonomy.mp3"
+        },
+        {
+            "text": "blamed",
+            "translation": "\u043e\u0431\u0432\u0438\u043d\u044f\u0435\u043c\u044b\u0439",
+            "audio": "../resources/words/audio/blamed.mp3"
+        },
+        {
+            "text": "blank",
+            "translation": "\u043f\u0443\u0441\u0442\u043e\u0439",
+            "audio": "../resources/words/audio/blank.mp3"
+        },
+        {
+            "text": "chrome",
+            "translation": "\u0445\u0440\u043e\u043c",
+            "audio": "../resources/words/audio/chrome.mp3"
+        },
+        {
+            "text": "contented",
+            "translation": "\u0434\u043e\u0432\u043e\u043b\u044c\u043d\u044b\u0439",
+            "audio": "../resources/words/audio/contented.mp3"
+        },
+        {
+            "text": "daycare",
+            "translation": "\u0434\u0435\u0442\u0441\u043a\u0438\u0439 \u0441\u0430\u0434",
+            "audio": "../resources/words/audio/daycare.mp3"
+        },
+        {
+            "text": "daydream",
+            "translation": "\u043c\u0435\u0447\u0442\u0430",
+            "audio": "../resources/words/audio/daydream.mp3"
+        },
+        {
+            "text": "deadwood",
+            "translation": "\u0432\u0430\u043b\u0435\u0436\u043d\u0438\u043a",
+            "audio": "../resources/words/audio/deadwood.mp3"
+        },
+        {
+            "text": "domingo",
+            "translation": "\u0434\u043e\u043c\u0438\u043d\u0433\u043e",
+            "audio": "../resources/words/audio/domingo.mp3"
+        },
+        {
+            "text": "epileptic",
+            "translation": "\u044d\u043f\u0438\u043b\u0435\u043f\u0442\u0438\u0447\u0435\u0441\u043a\u0438\u0439",
+            "audio": "../resources/words/audio/epileptic.mp3"
+        },
+        {
+            "text": "epilog",
+            "translation": "\u044d\u043f\u0438\u043b\u043e\u0433",
+            "audio": "../resources/words/audio/epilog.mp3"
+        },
+        {
+            "text": "fissile",
+            "translation": "\u0440\u0430\u0441\u0449\u0435\u043f\u043b\u044f\u044e\u0449\u0438\u0439\u0441\u044f",
+            "audio": "../resources/words/audio/fissile.mp3"
+        },
+        {
+            "text": "hash",
+            "translation": "\u0445\u044d\u0448",
+            "audio": "../resources/words/audio/hash.mp3"
+        },
+        {
+            "text": "iceboat",
+            "translation": "\u043b\u0435\u0434\u044f\u043d\u0430\u044f \u043b\u043e\u0434\u043a\u0430",
+            "audio": "../resources/words/audio/iceboat.mp3"
+        },
+        {
+            "text": "levity",
+            "translation": "\u043b\u0435\u0433\u043a\u043e\u043c\u044b\u0441\u043b\u0438\u0435",
+            "audio": "../resources/words/audio/levity.mp3"
+        },
+        {
+            "text": "motional",
+            "translation": "\u043f\u043e\u0434\u0432\u0438\u0436\u043d\u044b\u0439",
+            "audio": "../resources/words/audio/motional.mp3"
+        },
+        {
+            "text": "nudge",
+            "translation": "\u043f\u043e\u0434\u0442\u043e\u043b\u043a\u043d\u0443\u0442\u044c",
+            "audio": "../resources/words/audio/nudge.mp3"
+        },
+        {
+            "text": "nursery",
+            "translation": "\u0434\u0435\u0442\u0441\u043a\u0430\u044f",
+            "audio": "../resources/words/audio/nursery.mp3"
+        },
+        {
+            "text": "paralyzed",
+            "translation": "\u043f\u0430\u0440\u0430\u043b\u0438\u0437\u043e\u0432\u0430\u043d\u043d\u044b\u0439",
+            "audio": "../resources/words/audio/paralyzed.mp3"
+        },
+        {
+            "text": "playback",
+            "translation": "\u0432\u043e\u0441\u043f\u0440\u043e\u0438\u0437\u0432\u0435\u0434\u0435\u043d\u0438\u0435",
+            "audio": "../resources/words/audio/playback.mp3"
+        },
+        {
+            "text": "reprieve",
+            "translation": "\u043e\u0442\u0441\u0440\u043e\u0447\u043a\u0430",
+            "audio": "../resources/words/audio/reprieve.mp3"
+        },
+        {
+            "text": "scandent",
+            "translation": "\u0441\u043a\u0430\u043d\u0434\u0430\u043b\u044c\u043d\u044b\u0439",
+            "audio": "../resources/words/audio/scandent.mp3"
+        },
+        {
+            "text": "springy",
+            "translation": "\u0443\u043f\u0440\u0443\u0433\u0438\u0439",
+            "audio": "../resources/words/audio/springy.mp3"
+        },
+        {
+            "text": "sprinkle",
+            "translation": "\u043f\u043e\u0441\u044b\u043f\u0430\u0442\u044c",
+            "audio": "../resources/words/audio/sprinkle.mp3"
+        },
+        {
+            "text": "symbolize",
+            "translation": "\u0441\u0438\u043c\u0432\u043e\u043b\u0438\u0437\u0438\u0440\u043e\u0432\u0430\u0442\u044c",
+            "audio": "../resources/words/audio/symbolize.mp3"
+        },
+        {
+            "text": "toned",
+            "translation": "\u0442\u043e\u043d\u0438\u0440\u043e\u0432\u0430\u043d\u043d\u044b\u0439",
+            "audio": "../resources/words/audio/toned.mp3"
+        },
+        {
+            "text": "unforgiving",
+            "translation": "\u043d\u0435\u0443\u043c\u043e\u043b\u0438\u043c\u044b\u0439",
+            "audio": "../resources/words/audio/unforgiving.mp3"
+        },
+        {
+            "text": "unfortunate",
+            "translation": "\u043d\u0435\u0441\u0447\u0430\u0441\u0442\u043d\u044b\u0439",
+            "audio": "../resources/words/audio/unfortunate.mp3"
+        },
+        {
+            "text": "ungrateful",
+            "translation": "\u043d\u0435\u0431\u043b\u0430\u0433\u043e\u0434\u0430\u0440\u043d\u044b\u0439",
+            "audio": "../resources/words/audio/ungrateful.mp3"
+        },
+        {
+            "text": "unguided",
+            "translation": "\u043d\u0435\u0443\u043f\u0440\u0430\u0432\u043b\u044f\u0435\u043c\u044b\u0439",
+            "audio": "../resources/words/audio/unguided.mp3"
+        },
+        {
+            "text": "wane",
+            "translation": "\u043e\u0441\u043b\u0430\u0431\u0435\u0432\u0430\u0442\u044c",
+            "audio": "../resources/words/audio/wane.mp3"
+        },
+        {
+            "text": "ward",
+            "translation": "\u0441\u0442\u043e\u0440\u043e\u0436\u0438\u0442\u044c",
+            "audio": "../resources/words/audio/ward.mp3"
+        },
+        {
+            "text": "ware",
+            "translation": "\u043f\u043e\u0441\u0443\u0434\u0430",
+            "audio": "../resources/words/audio/ware.mp3"
+        },
+        {
+            "text": "warhorse",
+            "translation": "\u0431\u043e\u0435\u0432\u043e\u0439 \u043a\u043e\u043d\u044c",
+            "audio": "../resources/words/audio/warhorse.mp3"
+        },
+        {
+            "text": "warily",
+            "translation": "\u043e\u0441\u0442\u043e\u0440\u043e\u0436\u043d\u043e",
+            "audio": "../resources/words/audio/warily.mp3"
+        },
+        {
+            "text": "warmhearted",
+            "translation": "\u0441\u0435\u0440\u0434\u0435\u0447\u043d\u044b\u0439",
+            "audio": "../resources/words/audio/warmhearted.mp3"
+        },
+        {
+            "text": "warming",
+            "translation": "\u043f\u043e\u0442\u0435\u043f\u043b\u0435\u043d\u0438\u0435",
+            "audio": "../resources/words/audio/warming.mp3"
+        },
+        {
+            "text": "warmongering",
+            "translation": "\u0432\u043e\u0438\u043d\u0441\u0442\u0432\u0435\u043d\u043d\u044b\u0439",
+            "audio": "../resources/words/audio/warmongering.mp3"
+        }
+    ]
+}

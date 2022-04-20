@@ -44,7 +44,7 @@ void SettingsView::contextMenuEvent() {
 }
 
 void SettingsView::GetSettingsView() {
-  if (Settings::GetLevel() == Settings::level::easy) {
+  if (Settings::GetLevelSettings() == level::easy) {
     easy_mode_->setChecked(true);
   } else {
     hard_mode_->setChecked(true);
@@ -144,10 +144,10 @@ void SettingsView::SetDialogButtonStyles() {
   cancel_button_->setStyleSheet(styles::kCancelPushButtonStyle);
 }
 
-Settings::level SettingsView::GetLevelSettings() const {
+level SettingsView::GetLevelSettings() const {
   return (easy_mode_->isChecked())
-      ? Settings::level::easy
-      : Settings::level::hard;
+      ? level::easy
+      : level::hard;
 }
 
 bool SettingsView::GetSoundSettings() const {

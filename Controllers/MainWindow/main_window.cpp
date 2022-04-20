@@ -5,9 +5,9 @@ MainWindow::MainWindow(QMainWindow* parent) : QMainWindow(parent),
                                               menu_(new Menu(this)),
                                               settings_view_(new SettingsView(this)),
                                               keyEsc_(new QShortcut(Qt::Key_Escape, this, SLOT(close()))) {
-  setMinimumSize(main_window_sizes::kScreenSizeDefault);
+  setMinimumSize(window_sizes::kScreenSizeDefault);
   setWindowTitle("Duolingo");
-  setWindowIcon(QIcon("../resources/images/MainWindow/icon.svg"));
+  setWindowIcon(QIcon(":/images/MainWindow/icon.svg"));
   menu_->SetScoreLabel(Settings::GetScoreString());
   SetWidgets();
   ConnectUI();
@@ -59,21 +59,33 @@ void MainWindow::resizeEvent(QResizeEvent*) {
   setAutoFillBackground(true);
   QBrush brush;
   QPalette palette;
-  brush.setTextureImage(QImage("../resources/images/MainWindow/background.svg"));
+  brush.setTextureImage(QImage(":/images/MainWindow/background.svg"));
   palette.setBrush(QPalette::Window, brush);
   setPalette(palette);
 }
 
 void MainWindow::PickModStarted() {
+  CreateController();
+  controller_->StartExerciseSet(mode::pick);
+  hide();
 }
 
 void MainWindow::InputModStarted() {
+  CreateController();
+  controller_->StartExerciseSet(mode::input);
+  hide();
 }
 
 void MainWindow::AudioModStarted() {
+  CreateController();
+  controller_->StartExerciseSet(mode::audio);
+  hide();
 }
 
 void MainWindow::MixedModStarted() {
+  CreateController();
+  controller_->StartExerciseSet(mode::mixed);
+  hide();
 }
 
 void MainWindow::ShowSettings() {
@@ -116,4 +128,21 @@ void MainWindow::SaveSettings() {
 void MainWindow::RestoreSettings() {
   settings_view_->GetSettingsView();
   HideSettings();
+}
+
+void MainWindow::ReturnToMenu() {
+  controller_->CloseView();
+  menu_->SetScoreLabel(Settings::GetScoreString());
+  show();
+}
+
+void MainWindow::CreateController() {
+  if (controller_ != nullptr) {
+    delete controller_;
+  }
+  controller_ = new ExercisesController();
+  connect(controller_,
+          &ExercisesController::Back,
+          this,
+          &MainWindow::ReturnToMenu);
 }

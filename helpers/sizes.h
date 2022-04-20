@@ -2,11 +2,11 @@
 
 #include <QSize>
 
-namespace main_window_sizes {
+namespace window_sizes {
 
 constexpr QSize kScreenSizeDefault(800, 600);
 
-} // namespace main_window_sizes
+} // namespace window_sizes
 
 namespace menu_sizes {
 

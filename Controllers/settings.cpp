@@ -29,13 +29,13 @@ void Settings::SetSettings(level level_input,
   SetLevel(level_input);
 }
 
-Settings::level Settings::GetLevel() {
+level Settings::GetLevelSettings() {
   QSettings settings;
   int level = settings.value("level").toInt();
   return (level == 0) ? easy : hard;
 }
 
-void Settings::SetLevel(Settings::level level_input) {
+void Settings::SetLevel(level level_input) {
   QSettings settings;
   settings.setValue("level", level_input);
 }
@@ -48,4 +48,12 @@ bool Settings::GetSoundSetting() {
 void Settings::SetSoundSetting(bool sound_input) {
   QSettings settings;
   settings.setValue("sound", sound_input);
+}
+
+mode Settings::ToMode(int int_input) {
+  switch (int_input) {
+    case 0: return pick;
+    case 1: return input;
+    default: return audio;
+  }
 }
