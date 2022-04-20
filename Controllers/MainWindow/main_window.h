@@ -14,10 +14,11 @@
 #include "helpers/backgrounds.h"
 #include "helpers/sizes.h"
 
+#include "Controllers/exercises_controller.h"
 #include "Controllers/settings.h"
 
-#include "Views/menu.h"
-#include "Views/settings_view.h"
+#include "Views/Menu/menu.h"
+#include "Views/Menu/settings_view.h"
 
 class MainWindow : public QMainWindow {
   Q_OBJECT
@@ -40,9 +41,6 @@ class MainWindow : public QMainWindow {
   void HideSettings();
   bool checkExit();
 
-  //void StartExercise();
-  //void ReturnToMainWindow();
-
   void SaveSettings();
   void RestoreSettings();
 
@@ -52,7 +50,7 @@ class MainWindow : public QMainWindow {
   Menu* menu_ = nullptr;
   SettingsView* settings_view_ = nullptr;
 
-  //EventsController* events_controller_ = nullptr;
+  ExercisesController* controller_ = nullptr;
 
   QShortcut* keyEsc_;
 };

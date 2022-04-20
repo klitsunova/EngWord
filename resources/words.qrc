@@ -1,0 +1,6 @@
+<RCC>
+    <qresource prefix="/">
+    	<file>words/easy.json</file>
+    	<file>words/hard.json</file>
+    </qresource>
+</RCC>

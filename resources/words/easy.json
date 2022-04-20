@@ -1,0 +1,19 @@
+{
+	"words": [
+	{
+		"text": "cake",
+		"translation": "торт",
+		"audio": ":/words/audio/cake.mp3"
+	},
+	{
+		"text": "choral",
+		"translation": "хоровой",
+		"audio": ":/words/audio/choral.mp3"
+	},	
+	{
+		"text": "chosen",
+		"translation": "выбранный",
+		"audio": ":/words/audio/chosen.mp3"
+	}
+	]
+}
