@@ -6,7 +6,7 @@ MainWindow::MainWindow(QMainWindow* parent) : QMainWindow(parent),
                                               settings_view_(new SettingsView(this)),
                                               keyEsc_(new QShortcut(Qt::Key_Escape, this, SLOT(close()))),
                                               controller_(new ExercisesController()) {
-  setMinimumSize(main_window_sizes::kScreenSizeDefault);
+  setMinimumSize(window_sizes::kScreenSizeDefault);
   setWindowTitle("Duolingo");
   setWindowIcon(QIcon(":/images/MainWindow/icon.svg"));
   menu_->SetScoreLabel(Settings::GetScoreString());
@@ -53,6 +53,10 @@ void MainWindow::ConnectUI() {
           &SettingsView::CloseSettings,
           this,
           &MainWindow::RestoreSettings);
+  connect(controller_,
+          &ExercisesController::Back,
+          this,
+          &MainWindow::ReturnToMenu);
 }
 
 void MainWindow::resizeEvent(QResizeEvent*) {
@@ -125,4 +129,9 @@ void MainWindow::SaveSettings() {
 void MainWindow::RestoreSettings() {
   settings_view_->GetSettingsView();
   HideSettings();
+}
+
+void MainWindow::ReturnToMenu() {
+  controller_->CloseView();
+  show();
 }

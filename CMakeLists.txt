@@ -51,4 +51,5 @@ add_executable(Duolingo ${SOURCES})
 target_link_libraries(Duolingo
         Qt::Core
         Qt::Gui
-        Qt::Widgets)
+        Qt::Widgets
+        Qt::Multimedia)

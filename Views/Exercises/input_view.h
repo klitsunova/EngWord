@@ -6,5 +6,8 @@ class InputView : public QWidget {
   Q_OBJECT
 
  public:
+
  private:
+
+
 };

@@ -21,3 +21,15 @@ bool ExercisesSet::IsZeroAttemptsLeft() const {
 void ExercisesSet::SetWordsSet(QVector<std::pair<Word, mode>>* input) {
   words_set_ = input;
 }
+
+QVector<std::pair<Word, mode>>* ExercisesSet::GetWordsSet() {
+  return words_set_;
+}
+
+QString ExercisesSet::GetCorrectAnswer(int index) {
+  return words_set_->at(index).first.GetText();
+}
+
+mode ExercisesSet::GetMode(int index) {
+  return words_set_->at(index).second;
+}

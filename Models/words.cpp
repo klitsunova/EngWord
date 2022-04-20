@@ -33,7 +33,6 @@ void Word::SetAudioPath(QString audio_path_input) {
 }
 
 WordSet::WordSet() {
-  GetWordsData();
 }
 
 void WordSet::GetWordsData() {
@@ -57,6 +56,7 @@ void WordSet::GetWordsData() {
     QString translation = val.toObject().value("translation").toString();
     QString audio = val.toObject().value("audio").toString();
     words_.push_back(Word(text, translation, audio));
+    qDebug() << text << translation << audio;
   }
 }
 
@@ -81,7 +81,7 @@ QVector<std::pair<Word, mode>>* WordSet::CreateExercisesSet(
 QVector<Word>* WordSet::GetThreeRandomWords(QString text) {
   auto result = new QVector<Word>;
   QRandomGenerator* generator = QRandomGenerator::global();
-  while (result->size() != 3) {
+  while (result->size() != 4) {
     Word generated_word = words_[generator->bounded(0, words_.size())];
     if (generated_word.GetText() != text) {
       result->push_back(generated_word);

@@ -41,6 +41,8 @@ class MainWindow : public QMainWindow {
   void HideSettings();
   bool checkExit();
 
+  void ReturnToMenu();
+
   void SaveSettings();
   void RestoreSettings();
 

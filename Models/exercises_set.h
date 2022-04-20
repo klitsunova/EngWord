@@ -15,6 +15,11 @@ class ExercisesSet {
 
   void SetWordsSet(QVector<std::pair<Word, mode>>* input);
 
+  QVector<std::pair<Word, mode>>* GetWordsSet();
+
+  QString GetCorrectAnswer(int index);
+  mode GetMode(int index);
+
  private:
   QVector<std::pair<Word, mode>>* words_set_;
   int attempts_left_ = 3;
