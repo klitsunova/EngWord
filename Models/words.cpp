@@ -70,7 +70,7 @@ QVector<std::pair<Word, mode>>* WordSet::CreateExercisesSet(
     if (mode_input != mixed) {
       generated_mode = mode_input;
     } else {
-      generated_mode = Settings::ToMode(generator->bounded(0, 2));
+      generated_mode = Settings::ToMode(generator->bounded(0, 3));
     }
     result->push_back(std::make_pair(generated_word, generated_mode));
   }

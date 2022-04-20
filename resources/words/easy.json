@@ -3,197 +3,197 @@
         {
             "text": "cake",
             "translation": "\u0442\u043e\u0440\u0442",
-            "audio": ":/words/audio/cake.mp3"
+            "audio": "../resources/words/audio/cake.mp3"
         },
         {
             "text": "choral",
             "translation": "\u0445\u043e\u0440\u043e\u0432\u043e\u0439",
-            "audio": ":/words/audio/choral.mp3"
+            "audio": "../resources/words/audio/choral.mp3"
         },
         {
             "text": "chosen",
             "translation": "\u0432\u044b\u0431\u0440\u0430\u043d\u043d\u044b\u0439",
-            "audio": ":/words/audio/chosen.mp3"
+            "audio": "../resources/words/audio/chosen.mp3"
         },
         {
             "text": "day-by-day",
             "translation": "\u0434\u0435\u043d\u044c \u0437\u0430 \u0434\u043d\u0435\u043c",
-            "audio": ":/words/audio/day-by-day.mp3"
+            "audio": "../resources/words/audio/day-by-day.mp3"
         },
         {
             "text": "dead",
             "translation": "\u043c\u0435\u0440\u0442\u0432\u044b\u0445",
-            "audio": ":/words/audio/dead.mp3"
+            "audio": "../resources/words/audio/dead.mp3"
         },
         {
             "text": "dollar",
             "translation": "\u0434\u043e\u043b\u043b\u0430\u0440",
-            "audio": ":/words/audio/dollar.mp3"
+            "audio": "../resources/words/audio/dollar.mp3"
         },
         {
             "text": "domestic",
             "translation": "\u043e\u0434\u043e\u043c\u0430\u0448\u043d\u0435\u043d\u043d\u044b\u0439",
-            "audio": ":/words/audio/domestic.mp3"
+            "audio": "../resources/words/audio/domestic.mp3"
         },
         {
             "text": "done",
             "translation": "\u0441\u0434\u0435\u043b\u0430\u043d\u043e",
-            "audio": ":/words/audio/done.mp3"
+            "audio": "../resources/words/audio/done.mp3"
         },
         {
             "text": "equal",
             "translation": "\u0440\u0430\u0432\u043d\u044b\u0439",
-            "audio": ":/words/audio/equal.mp3"
+            "audio": "../resources/words/audio/equal.mp3"
         },
         {
             "text": "fisherman",
             "translation": "\u0440\u044b\u0431\u0430\u043a",
-            "audio": ":/words/audio/fisherman.mp3"
+            "audio": "../resources/words/audio/fisherman.mp3"
         },
         {
             "text": "fit",
             "translation": "\u0441\u043e\u043e\u0442\u0432\u0435\u0442\u0441\u0442\u0432\u043e\u0432\u0430\u0442\u044c",
-            "audio": ":/words/audio/fit.mp3"
+            "audio": "../resources/words/audio/fit.mp3"
         },
         {
             "text": "fix",
             "translation": "\u0438\u0441\u043f\u0440\u0430\u0432\u0438\u0442\u044c",
-            "audio": ":/words/audio/fix.mp3"
+            "audio": "../resources/words/audio/fix.mp3"
         },
         {
             "text": "get",
             "translation": "\u043f\u043e\u043b\u0443\u0447\u0438\u0442\u044c",
-            "audio": ":/words/audio/get.mp3"
+            "audio": "../resources/words/audio/get.mp3"
         },
         {
             "text": "ice skating",
             "translation": "\u043a\u0430\u0442\u0430\u0442\u044c\u0441\u044f \u043d\u0430 \u043a\u043e\u043d\u044c\u043a\u0430\u0445",
-            "audio": ":/words/audio/ice skating.mp3"
+            "audio": "../resources/words/audio/ice skating.mp3"
         },
         {
             "text": "jazz",
             "translation": "\u0434\u0436\u0430\u0437",
-            "audio": ":/words/audio/jazz.mp3"
+            "audio": "../resources/words/audio/jazz.mp3"
         },
         {
             "text": "jeans",
             "translation": "\u0434\u0436\u0438\u043d\u0441\u044b",
-            "audio": ":/words/audio/jeans.mp3"
+            "audio": "../resources/words/audio/jeans.mp3"
         },
         {
             "text": "marker",
             "translation": "\u043c\u0430\u0440\u043a\u0435\u0440",
-            "audio": ":/words/audio/marker.mp3"
+            "audio": "../resources/words/audio/marker.mp3"
         },
         {
             "text": "market",
             "translation": "\u0440\u044b\u043d\u043e\u043a",
-            "audio": ":/words/audio/market.mp3"
+            "audio": "../resources/words/audio/market.mp3"
         },
         {
             "text": "marriage",
             "translation": "\u0431\u0440\u0430\u043a",
-            "audio": ":/words/audio/marriage.mp3"
+            "audio": "../resources/words/audio/marriage.mp3"
         },
         {
             "text": "motel",
             "translation": "\u043c\u043e\u0442\u0435\u043b\u044c",
-            "audio": ":/words/audio/motel.mp3"
+            "audio": "../resources/words/audio/motel.mp3"
         },
         {
             "text": "mother",
             "translation": "\u043c\u0430\u043c\u0430",
-            "audio": ":/words/audio/mother.mp3"
+            "audio": "../resources/words/audio/mother.mp3"
         },
         {
             "text": "please",
             "translation": "\u043f\u043e\u0436\u0430\u043b\u0443\u0439\u0441\u0442\u0430",
-            "audio": ":/words/audio/please.mp3"
+            "audio": "../resources/words/audio/please.mp3"
         },
         {
             "text": "public",
             "translation": "\u043f\u0443\u0431\u043b\u0438\u0447\u043d\u044b\u0439",
-            "audio": ":/words/audio/public.mp3"
+            "audio": "../resources/words/audio/public.mp3"
         },
         {
             "text": "scary",
             "translation": "\u0441\u0442\u0440\u0430\u0448\u043d\u044b\u0439",
-            "audio": ":/words/audio/scary.mp3"
+            "audio": "../resources/words/audio/scary.mp3"
         },
         {
             "text": "silly",
             "translation": "\u0433\u043b\u0443\u043f\u044b\u0439",
-            "audio": ":/words/audio/silly.mp3"
+            "audio": "../resources/words/audio/silly.mp3"
         },
         {
             "text": "sword",
             "translation": "\u043c\u0435\u0447",
-            "audio": ":/words/audio/sword.mp3"
+            "audio": "../resources/words/audio/sword.mp3"
         },
         {
             "text": "tomato",
             "translation": "\u043f\u043e\u043c\u0438\u0434\u043e\u0440",
-            "audio": ":/words/audio/tomato.mp3"
+            "audio": "../resources/words/audio/tomato.mp3"
         },
         {
             "text": "unforgettable",
             "translation": "\u043d\u0435\u0437\u0430\u0431\u044b\u0432\u0430\u0435\u043c\u044b\u0439",
-            "audio": ":/words/audio/unforgettable.mp3"
+            "audio": "../resources/words/audio/unforgettable.mp3"
         },
         {
             "text": "unfree",
             "translation": "\u043d\u0435\u0441\u0432\u043e\u0431\u043e\u0434\u043d\u044b\u0439",
-            "audio": ":/words/audio/unfree.mp3"
+            "audio": "../resources/words/audio/unfree.mp3"
         },
         {
             "text": "unhappy",
             "translation": "\u043d\u0435\u0441\u0447\u0430\u0441\u0442\u043d\u044b\u0439",
-            "audio": ":/words/audio/unhappy.mp3"
+            "audio": "../resources/words/audio/unhappy.mp3"
         },
         {
             "text": "unholy",
             "translation": "\u043d\u0435\u0447\u0435\u0441\u0442\u0438\u0432\u044b\u0439",
-            "audio": ":/words/audio/unholy.mp3"
+            "audio": "../resources/words/audio/unholy.mp3"
         },
         {
             "text": "unhoped",
             "translation": "\u043d\u0435\u043e\u0436\u0438\u0434\u0430\u043d\u043d\u044b\u0439",
-            "audio": ":/words/audio/unhoped.mp3"
+            "audio": "../resources/words/audio/unhoped.mp3"
         },
         {
             "text": "unhopeful",
             "translation": "\u0431\u0435\u0437\u043d\u0430\u0434\u0435\u0436\u043d\u044b\u0439",
-            "audio": ":/words/audio/unhopeful.mp3"
+            "audio": "../resources/words/audio/unhopeful.mp3"
         },
         {
             "text": "wallpaper",
             "translation": "\u043e\u0431\u043e\u0438 \u043d\u0430 \u0441\u0442\u0435\u043d\u0443",
-            "audio": ":/words/audio/wallpaper.mp3"
+            "audio": "../resources/words/audio/wallpaper.mp3"
         },
         {
             "text": "waltz",
             "translation": "\u0432\u0430\u043b\u044c\u0441",
-            "audio": ":/words/audio/waltz.mp3"
+            "audio": "../resources/words/audio/waltz.mp3"
         },
         {
             "text": "wanted",
             "translation": "\u0432 \u0440\u043e\u0437\u044b\u0441\u043a\u0435",
-            "audio": ":/words/audio/wanted.mp3"
+            "audio": "../resources/words/audio/wanted.mp3"
         },
         {
             "text": "war",
             "translation": "\u0432\u043e\u0439\u043d\u0430",
-            "audio": ":/words/audio/war.mp3"
+            "audio": "../resources/words/audio/war.mp3"
         },
         {
             "text": "wardrobe",
             "translation": "\u0433\u0430\u0440\u0434\u0435\u0440\u043e\u0431",
-            "audio": ":/words/audio/wardrobe.mp3"
+            "audio": "../resources/words/audio/wardrobe.mp3"
         },
         {
             "text": "warmth",
             "translation": "\u0442\u0435\u043f\u043b\u043e",
-            "audio": ":/words/audio/warmth.mp3"
+            "audio": "../resources/words/audio/warmth.mp3"
         }
     ]
 }

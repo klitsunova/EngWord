@@ -44,6 +44,7 @@ class ExercisesSetView : public QWidget {
   void ReadyButtonPressed();
   void BackButtonPressed();
   void ContinueButtonPressed();
+  void PlayAudio();
 
  private:
   void SetLayouts();

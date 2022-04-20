@@ -34,6 +34,12 @@ void ExercisesController::StartExerciseSet(mode input_mode) {
         view_->AddInputWidget(new_view);
         break;
       }
+      case audio: {
+        auto* new_view = new AudioView();
+        new_view->SetAudioPath(task.first.GetAudioPath());
+        view_->AddAudioWidget(new_view);
+        break;
+      }
     }
   }
   view_->SetDefaultWidget();

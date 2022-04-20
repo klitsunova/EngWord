@@ -96,11 +96,15 @@ void ExercisesSetView::SetProgressBarMax(int value) {
 QString ExercisesSetView::GetAnswer(mode input_mode) {
   switch (input_mode) {
     case pick: {
-      PickView* widget = dynamic_cast<PickView*>(stacked_widgets_->currentWidget());
+      auto* widget = dynamic_cast<PickView*>(stacked_widgets_->currentWidget());
       return widget->GetChecked();
     }
     case input: {
-      InputView* widget = dynamic_cast<InputView*>(stacked_widgets_->currentWidget());
+      auto widget = dynamic_cast<InputView*>(stacked_widgets_->currentWidget());
+      return widget->GetAnswer();
+    }
+    case audio: {
+      auto* widget = dynamic_cast<AudioView*>(stacked_widgets_->currentWidget());
       return widget->GetAnswer();
     }
   }
