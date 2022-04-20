@@ -1,9 +1,9 @@
 #pragma once
 
-#include <QWidget>
-#include <QRadioButton>
 #include <QLabel>
+#include <QRadioButton>
 #include <QVBoxLayout>
+#include <QWidget>
 
 #include "helpers/fonts.h"
 #include "helpers/styles.h"
@@ -29,8 +29,6 @@ class PickView : public QWidget {
   QString GetFourth();
 
   QString GetChecked();
-
-  void ConnectUI();
 
  private:
   QLabel* task_;

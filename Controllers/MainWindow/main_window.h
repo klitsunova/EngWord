@@ -46,6 +46,8 @@ class MainWindow : public QMainWindow {
   void SaveSettings();
   void RestoreSettings();
 
+  void CreateController();
+
   void closeEvent(QCloseEvent* event) override;
 
   QStackedWidget* stacked_widgets_ = nullptr;

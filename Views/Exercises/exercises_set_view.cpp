@@ -110,3 +110,13 @@ void ExercisesSetView::ShowCorrect(bool is_correct, QString correct_text) {
   }
   is_correct_label_->show();
 }
+
+void ExercisesSetView::UpdateAttemptsLabel(int attempts_left) {
+  attempts_label_->setText("Attempts left: " + QString::number(attempts_left));
+}
+
+void ExercisesSetView::ShowAnimation() {
+  auto* animation = new Animation();
+  stacked_widgets_->addWidget(animation);
+  stacked_widgets_->setCurrentWidget(animation);
+}

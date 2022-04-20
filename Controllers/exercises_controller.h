@@ -2,7 +2,9 @@
 
 #include <QFile>
 #include <QMainWindow>
+#include <QMediaPlayer>
 #include <QStackedWidget>
+#include <QtMultimedia>
 
 #include "helpers/backgrounds.h"
 #include "helpers/sizes.h"
@@ -29,9 +31,8 @@ class ExercisesController : public QMainWindow {
 
   void CloseView();
 
-  signals:
-   void Back();
-
+ signals:
+  void Back();
 
  private:
   void SetWidgets();
@@ -43,4 +44,5 @@ class ExercisesController : public QMainWindow {
   int exercises_amount_ = 10;
   int current_task_ = 0;
   int correct_answers_ = 0;
+  QMediaPlayer* player_;
 };

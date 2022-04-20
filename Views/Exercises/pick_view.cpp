@@ -8,7 +8,6 @@ PickView::PickView() : task_(new QLabel(this)),
                        fourth_(new QRadioButton(this)) {
   SetStyles();
   SetLayout();
-  ConnectUI();
 }
 
 void PickView::SetStyles() {
@@ -29,25 +28,6 @@ void PickView::SetLayout() {
   layout_->addWidget(second_);
   layout_->addWidget(third_);
   layout_->addWidget(fourth_);
-}
-
-void PickView::ConnectUI() {
-  // connect(first_,
-  //         &::QRadioButton::clicked,
-  //         this,
-  //         &PickView::FirstChecked);
-  // connect(second_,
-  //         &::QRadioButton::clicked,
-  //         this,
-  //         &PickView::FirstChecked);
-  // connect(third_,
-  //         &::QRadioButton::clicked,
-  //         this,
-  //         &PickView::FirstChecked);
-  // connect(fourth_,
-  //         &::QRadioButton::clicked,
-  //         this,
-  //         &PickView::FirstChecked);
 }
 
 void PickView::SetTask(QString input) {

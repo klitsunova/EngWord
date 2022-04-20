@@ -4,8 +4,7 @@ MainWindow::MainWindow(QMainWindow* parent) : QMainWindow(parent),
                                               stacked_widgets_(new QStackedWidget(this)),
                                               menu_(new Menu(this)),
                                               settings_view_(new SettingsView(this)),
-                                              keyEsc_(new QShortcut(Qt::Key_Escape, this, SLOT(close()))),
-                                              controller_(new ExercisesController()) {
+                                              keyEsc_(new QShortcut(Qt::Key_Escape, this, SLOT(close()))) {
   setMinimumSize(window_sizes::kScreenSizeDefault);
   setWindowTitle("Duolingo");
   setWindowIcon(QIcon(":/images/MainWindow/icon.svg"));
@@ -53,10 +52,6 @@ void MainWindow::ConnectUI() {
           &SettingsView::CloseSettings,
           this,
           &MainWindow::RestoreSettings);
-  connect(controller_,
-          &ExercisesController::Back,
-          this,
-          &MainWindow::ReturnToMenu);
 }
 
 void MainWindow::resizeEvent(QResizeEvent*) {
@@ -70,21 +65,25 @@ void MainWindow::resizeEvent(QResizeEvent*) {
 }
 
 void MainWindow::PickModStarted() {
+  CreateController();
   controller_->StartExerciseSet(mode::pick);
   hide();
 }
 
 void MainWindow::InputModStarted() {
+  CreateController();
   controller_->StartExerciseSet(mode::input);
   hide();
 }
 
 void MainWindow::AudioModStarted() {
+  CreateController();
   controller_->StartExerciseSet(mode::audio);
   hide();
 }
 
 void MainWindow::MixedModStarted() {
+  CreateController();
   controller_->StartExerciseSet(mode::mixed);
   hide();
 }
@@ -133,5 +132,17 @@ void MainWindow::RestoreSettings() {
 
 void MainWindow::ReturnToMenu() {
   controller_->CloseView();
+  menu_->SetScoreLabel(Settings::GetScoreString());
   show();
+}
+
+void MainWindow::CreateController() {
+  if (controller_ != nullptr) {
+    delete controller_;
+  }
+  controller_ = new ExercisesController();
+  connect(controller_,
+          &ExercisesController::Back,
+          this,
+          &MainWindow::ReturnToMenu);
 }

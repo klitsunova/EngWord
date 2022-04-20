@@ -27,7 +27,8 @@ set(VIEWS
         Views/Exercises/exercises_set_view.cpp
         Views/Exercises/audio_view.cpp
         Views/Exercises/input_view.cpp
-        Views/Exercises/pick_view.cpp)
+        Views/Exercises/pick_view.cpp
+        Views/Exercises/animation.cpp)
 
 set(CONTROLLERS
         Controllers/MainWindow/main_window.cpp
@@ -49,7 +50,7 @@ set(SOURCES
 add_executable(Duolingo ${SOURCES})
 
 target_link_libraries(Duolingo
-        Qt::Core
-        Qt::Gui
-        Qt::Widgets
-        Qt::Multimedia)
+        Qt6::Core
+        Qt6::Gui
+        Qt6::Widgets
+        Qt6::Multimedia)
