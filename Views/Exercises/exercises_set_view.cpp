@@ -99,6 +99,10 @@ QString ExercisesSetView::GetAnswer(mode input_mode) {
       PickView* widget = dynamic_cast<PickView*>(stacked_widgets_->currentWidget());
       return widget->GetChecked();
     }
+    case input: {
+      InputView* widget = dynamic_cast<InputView*>(stacked_widgets_->currentWidget());
+      return widget->GetAnswer();
+    }
   }
 }
 

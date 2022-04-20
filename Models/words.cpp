@@ -56,7 +56,6 @@ void WordSet::GetWordsData() {
     QString translation = val.toObject().value("translation").toString();
     QString audio = val.toObject().value("audio").toString();
     words_.push_back(Word(text, translation, audio));
-    qDebug() << text << translation << audio;
   }
 }
 

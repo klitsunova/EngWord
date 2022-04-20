@@ -26,6 +26,13 @@ void ExercisesController::StartExerciseSet(mode input_mode) {
         new_view->SetFourth(task.first.GetText());
         new_view->SetTask(task.first.GetTranslation());
         view_->AddPickWidget(new_view);
+        break;
+      }
+      case input: {
+        auto* new_view = new InputView();
+        new_view->SetTask(task.first.GetTranslation());
+        view_->AddInputWidget(new_view);
+        break;
       }
     }
   }
