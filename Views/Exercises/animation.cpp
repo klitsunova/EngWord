@@ -1,5 +1,11 @@
 #include "animation.h"
 
+#include <QPainter>
+#include <QRandomGenerator>
+#include <QTimer>
+
+#include "helpers/fonts.h"
+
 Animation::Animation() : label_(new QLabel("Hurrah! Well done!", this)) {
   label_->setFont(fonts::kLabelFont);
   auto paintTimer = new QTimer(this);

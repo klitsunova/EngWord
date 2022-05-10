@@ -1,5 +1,11 @@
 #include "words.h"
 
+#include <QFile>
+#include <QJsonArray>
+#include <QJsonDocument>
+#include <QJsonObject>
+#include <QRandomGenerator>
+
 Word::Word(
     QString text_input,
     QString translation_input,
@@ -12,24 +18,12 @@ QString Word::GetText() const {
   return text_;
 }
 
-void Word::SetText(QString text_input) {
-  text_ = std::move(text_input);
-}
-
 QString Word::GetTranslation() const {
   return translation_;
 }
 
-void Word::SetTranslation(QString translation_input) {
-  translation_ = std::move(translation_input);
-}
-
 QString Word::GetAudioPath() const {
   return audio_path_;
-}
-
-void Word::SetAudioPath(QString audio_path_input) {
-  audio_path_ = std::move(audio_path_input);
 }
 
 WordSet::WordSet() {
@@ -37,7 +31,7 @@ WordSet::WordSet() {
 
 void WordSet::GetWordsData() {
   QFile file;
-  if (Settings::GetLevelSettings() == easy) {
+  if (Settings::GetLevelSettings() == Level::kEasy) {
     file.setFileName(":/words/easy.json");
   } else {
     file.setFileName(":/words/hard.json");
@@ -59,15 +53,15 @@ void WordSet::GetWordsData() {
   }
 }
 
-QVector<std::pair<Word, mode>>* WordSet::CreateExercisesSet(
-    mode mode_input,
+QVector<std::pair<Word, Mode>>* WordSet::CreateExercisesSet(
+    Mode mode_input,
     int exercise_amount) {
-  auto* result = new QVector<std::pair<Word, mode>>;
+  auto* result = new QVector<std::pair<Word, Mode>>;
   QRandomGenerator* generator = QRandomGenerator::global();
   for (size_t i = 0; i < exercise_amount; ++i) {
     Word generated_word = words_[generator->bounded(0, words_.size())];
-    mode generated_mode;
-    if (mode_input != mixed) {
+    Mode generated_mode;
+    if (mode_input != Mode::kMixed) {
       generated_mode = mode_input;
     } else {
       generated_mode = Settings::ToMode(generator->bounded(0, 3));

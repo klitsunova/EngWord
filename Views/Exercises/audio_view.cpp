@@ -1,6 +1,11 @@
 #include "audio_view.h"
 
+#include <QAudioOutput>
 #include <utility>
+
+#include "helpers/fonts.h"
+#include "helpers/sizes.h"
+#include "helpers/styles.h"
 
 AudioView::AudioView() : play_(new QPushButton("Play", this)),
                          form_(new QTextEdit(this)),

@@ -1,18 +1,13 @@
 #pragma once
 
 #include <QLabel>
-#include <QPainter>
 #include <QProgressBar>
 #include <QPushButton>
 #include <QStackedWidget>
 #include <QWidget>
 
-#include "helpers/fonts.h"
-#include "helpers/sizes.h"
-#include "helpers/styles.h"
+#include "Models/settings.h"
 
-#include "Controllers/settings.h"
-#include "Views/Exercises/animation.h"
 #include "Views/Exercises/audio_view.h"
 #include "Views/Exercises/input_view.h"
 #include "Views/Exercises/pick_view.h"
@@ -31,13 +26,9 @@ class ExercisesSetView : public QWidget {
   void SetWidget(int index);
 
   void SetProgressBarMax(int value);
-
-  QString GetAnswer(mode input_mode);
-
+  QString GetAnswer(Mode input_mode);
   void ShowCorrect(bool is_correct, QString correct_text);
-
   void UpdateAttemptsLabel(int attempts_left);
-
   void ShowAnimation();
 
  signals:

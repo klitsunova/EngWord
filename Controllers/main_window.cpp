@@ -1,5 +1,17 @@
 #include "main_window.h"
 
+#include <QBrush>
+#include <QCloseEvent>
+#include <QColor>
+#include <QCoreApplication>
+#include <QMessageBox>
+#include <QPalette>
+#include <QSettings>
+
+#include "Models/settings.h"
+#include "helpers/backgrounds.h"
+#include "helpers/sizes.h"
+
 MainWindow::MainWindow(QMainWindow* parent) : QMainWindow(parent),
                                               stacked_widgets_(new QStackedWidget(this)),
                                               menu_(new Menu(this)),
@@ -66,25 +78,25 @@ void MainWindow::resizeEvent(QResizeEvent*) {
 
 void MainWindow::PickModStarted() {
   CreateController();
-  controller_->StartExerciseSet(mode::pick);
+  controller_->StartExerciseSet(Mode::kPick);
   hide();
 }
 
 void MainWindow::InputModStarted() {
   CreateController();
-  controller_->StartExerciseSet(mode::input);
+  controller_->StartExerciseSet(Mode::kInput);
   hide();
 }
 
 void MainWindow::AudioModStarted() {
   CreateController();
-  controller_->StartExerciseSet(mode::audio);
+  controller_->StartExerciseSet(Mode::kAudio);
   hide();
 }
 
 void MainWindow::MixedModStarted() {
   CreateController();
-  controller_->StartExerciseSet(mode::mixed);
+  controller_->StartExerciseSet(Mode::kMixed);
   hide();
 }
 
@@ -137,9 +149,7 @@ void MainWindow::ReturnToMenu() {
 }
 
 void MainWindow::CreateController() {
-  if (controller_ != nullptr) {
-    delete controller_;
-  }
+  delete controller_;
   controller_ = new ExercisesController();
   connect(controller_,
           &ExercisesController::Back,

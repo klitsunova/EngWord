@@ -6,8 +6,6 @@ set(CMAKE_AUTOMOC ON)
 set(CMAKE_AUTORCC ON)
 set(CMAKE_AUTOUIC ON)
 
-set(CMAKE_PREFIX_PATH "~/Qt/6.3.0/gcc_64/lib/cmake")
-
 set(CMAKE_INCLUDE_CURRENT_DIR ON)
 
 find_package(Qt6 COMPONENTS
@@ -18,22 +16,25 @@ find_package(Qt6 COMPONENTS
         REQUIRED)
 
 set(MODELS
+        Models/exercises_set.cpp
+        Models/settings.cpp
         Models/words.cpp
-        Models/exercises_set.cpp)
+        )
 
 set(VIEWS
-        Views/Menu/menu.cpp
-        Views/Menu/settings_view.cpp
-        Views/Exercises/exercises_set_view.cpp
+        Views/Exercises/animation.cpp
         Views/Exercises/audio_view.cpp
+        Views/Exercises/exercises_set_view.cpp
         Views/Exercises/input_view.cpp
         Views/Exercises/pick_view.cpp
-        Views/Exercises/animation.cpp)
+        Views/Menu/menu.cpp
+        Views/Menu/settings_view.cpp
+        )
 
 set(CONTROLLERS
-        Controllers/MainWindow/main_window.cpp
-        Controllers/settings.cpp
-        Controllers/exercises_controller.cpp)
+        Controllers/exercises_controller.cpp
+        Controllers/main_window.cpp
+        )
 
 set(RESOURCES
         resources/audio.qrc

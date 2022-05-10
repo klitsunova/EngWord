@@ -1,22 +1,10 @@
 #pragma once
 
-#include <QBrush>
-#include <QCloseEvent>
-#include <QColor>
-#include <QCoreApplication>
 #include <QMainWindow>
-#include <QMessageBox>
-#include <QPalette>
-#include <QSettings>
 #include <QShortcut>
 #include <QStackedWidget>
 
-#include "helpers/backgrounds.h"
-#include "helpers/sizes.h"
-
 #include "Controllers/exercises_controller.h"
-#include "Controllers/settings.h"
-
 #include "Views/Menu/menu.h"
 #include "Views/Menu/settings_view.h"
 
@@ -27,11 +15,13 @@ class MainWindow : public QMainWindow {
   explicit MainWindow(QMainWindow* parent = nullptr);
   ~MainWindow() override = default;
 
+  void resizeEvent(QResizeEvent*) override;
+  void closeEvent(QCloseEvent* event) override;
+
  private:
   void SetWidgets();
-  void ConnectUI();
 
-  void resizeEvent(QResizeEvent*) override;
+  void ConnectUI();
 
   void PickModStarted();
   void InputModStarted();
@@ -48,13 +38,9 @@ class MainWindow : public QMainWindow {
 
   void CreateController();
 
-  void closeEvent(QCloseEvent* event) override;
-
   QStackedWidget* stacked_widgets_ = nullptr;
   Menu* menu_ = nullptr;
   SettingsView* settings_view_ = nullptr;
-
   ExercisesController* controller_ = nullptr;
-
   QShortcut* keyEsc_;
 };

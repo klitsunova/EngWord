@@ -1,16 +1,11 @@
 #pragma once
 
-#include <QAudioOutput>
+
 #include <QHBoxLayout>
 #include <QMediaPlayer>
 #include <QPushButton>
-#include <QRadioButton>
 #include <QTextEdit>
 #include <QWidget>
-
-#include "helpers/fonts.h"
-#include "helpers/sizes.h"
-#include "helpers/styles.h"
 
 class AudioView : public QWidget {
   Q_OBJECT

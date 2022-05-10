@@ -5,9 +5,6 @@
 #include <QVBoxLayout>
 #include <QWidget>
 
-#include "helpers/fonts.h"
-#include "helpers/styles.h"
-
 class PickView : public QWidget {
   Q_OBJECT
  public:
@@ -17,16 +14,11 @@ class PickView : public QWidget {
   void SetStyles();
   void SetLayout();
 
-  void SetTask(QString input);
-  void SetFirst(QString input);
-  void SetSecond(QString input);
-  void SetThird(QString input);
-  void SetFourth(QString input);
-
-  QString GetFirst();
-  QString GetSecond();
-  QString GetThird();
-  QString GetFourth();
+  void SetTask(const QString& input);
+  void SetFirst(const QString& input);
+  void SetSecond(const QString& input);
+  void SetThird(const QString& input);
+  void SetFourth(const QString& input);
 
   QString GetChecked();
 

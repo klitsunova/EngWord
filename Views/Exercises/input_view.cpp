@@ -1,5 +1,7 @@
 #include "input_view.h"
 
+#include "helpers/fonts.h"
+
 InputView::InputView() : layout_(new QVBoxLayout(this)),
                          task_(new QLabel(this)),
                          form_(new QTextEdit(this)) {

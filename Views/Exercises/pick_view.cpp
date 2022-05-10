@@ -1,5 +1,8 @@
 #include "pick_view.h"
 
+#include "helpers/fonts.h"
+#include "helpers/styles.h"
+
 PickView::PickView() : task_(new QLabel(this)),
                        layout_(new QVBoxLayout(this)),
                        first_(new QRadioButton(this)),
@@ -12,6 +15,7 @@ PickView::PickView() : task_(new QLabel(this)),
 
 void PickView::SetStyles() {
   task_->setFont(fonts::kLabelFont);
+  // TODO: rewrite with loop
   first_->setStyleSheet(styles::kRadioButtonStyle);
   first_->setFont(fonts::kSmallLabelFont);
   second_->setStyleSheet(styles::kRadioButtonStyle);
@@ -30,23 +34,23 @@ void PickView::SetLayout() {
   layout_->addWidget(fourth_);
 }
 
-void PickView::SetTask(QString input) {
+void PickView::SetTask(const QString& input) {
   task_->setText("Translate: " + input);
 }
 
-void PickView::SetFirst(QString input) {
+void PickView::SetFirst(const QString& input) {
   first_->setText(input);
 }
 
-void PickView::SetSecond(QString input) {
+void PickView::SetSecond(const QString& input) {
   second_->setText(input);
 }
 
-void PickView::SetThird(QString input) {
+void PickView::SetThird(const QString& input) {
   third_->setText(input);
 }
 
-void PickView::SetFourth(QString input) {
+void PickView::SetFourth(const QString& input) {
   fourth_->setText(input);
 }
 
@@ -63,21 +67,5 @@ QString PickView::GetChecked() {
   if (fourth_->isChecked()) {
     return fourth_->text();
   }
-  return QString();
-}
-
-QString PickView::GetFirst() {
-  return first_->text();
-}
-
-QString PickView::GetSecond() {
-  return second_->text();
-}
-
-QString PickView::GetThird() {
-  return third_->text();
-}
-
-QString PickView::GetFourth() {
-  return fourth_->text();
+  return {};
 }

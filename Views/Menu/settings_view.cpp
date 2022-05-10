@@ -1,5 +1,9 @@
 #include "settings_view.h"
 
+#include "helpers/fonts.h"
+#include "helpers/sizes.h"
+#include "helpers/styles.h"
+
 SettingsView::SettingsView(QWidget* parent) : QWidget(parent),
                                               layout_(new QGridLayout(this)),
                                               level_label_(new QLabel("Difficulty", this)),
@@ -44,7 +48,7 @@ void SettingsView::contextMenuEvent() {
 }
 
 void SettingsView::GetSettingsView() {
-  if (Settings::GetLevelSettings() == level::easy) {
+  if (Settings::GetLevelSettings() == Level::kEasy) {
     easy_mode_->setChecked(true);
   } else {
     hard_mode_->setChecked(true);
@@ -144,10 +148,10 @@ void SettingsView::SetDialogButtonStyles() {
   cancel_button_->setStyleSheet(styles::kCancelPushButtonStyle);
 }
 
-level SettingsView::GetLevelSettings() const {
+Level SettingsView::GetLevelSettings() const {
   return (easy_mode_->isChecked())
-      ? level::easy
-      : level::hard;
+      ? Level::kEasy
+      : Level::kHard;
 }
 
 bool SettingsView::GetSoundSettings() const {

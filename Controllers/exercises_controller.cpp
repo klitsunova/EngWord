@@ -1,5 +1,10 @@
 #include "exercises_controller.h"
 
+#include <QtMultimedia>
+
+#include "Models/settings.h"
+#include "helpers/sizes.h"
+
 ExercisesController::ExercisesController() : view_(new ExercisesSetView()),
                                              model_(new ExercisesSet()),
                                              word_set_(new WordSet()),
@@ -10,14 +15,14 @@ ExercisesController::ExercisesController() : view_(new ExercisesSetView()),
   ConnectUI();
 }
 
-void ExercisesController::StartExerciseSet(mode input_mode) {
+void ExercisesController::StartExerciseSet(Mode input_mode) {
   word_set_->GetWordsData();
   model_->SetWordsSet(word_set_->CreateExercisesSet(input_mode, exercises_amount_));
   view_->SetProgressBarMax(exercises_amount_);
   view_->UpdateAttemptsLabel(model_->GetAttempts());
   for (const auto& task: *model_->GetWordsSet()) {
     switch (task.second) {
-      case pick: {
+      case Mode::kPick: {
         auto* new_view = new PickView;
         QVector<Word>* variants = word_set_->GetThreeRandomWords(task.first.GetText());
         new_view->SetFirst((*variants)[0].GetText());
@@ -28,13 +33,13 @@ void ExercisesController::StartExerciseSet(mode input_mode) {
         view_->AddPickWidget(new_view);
         break;
       }
-      case input: {
+      case Mode::kInput: {
         auto* new_view = new InputView();
         new_view->SetTask(task.first.GetTranslation());
         view_->AddInputWidget(new_view);
         break;
       }
-      case audio: {
+      case Mode::kAudio: {
         auto* new_view = new AudioView();
         new_view->SetAudioPath(task.first.GetAudioPath());
         view_->AddAudioWidget(new_view);
@@ -63,7 +68,7 @@ void ExercisesController::ConnectUI() {
 
 void ExercisesController::CheckAnswer() {
   QString correct_answer = model_->GetCorrectAnswer(current_task_);
-  mode current_mode = model_->GetMode(current_task_);
+  Mode current_mode = model_->GetMode(current_task_);
   QString checked_answer = view_->GetAnswer(current_mode);
   if (correct_answer == checked_answer) {
     player_->setSource(QUrl::fromLocalFile("../resources/answers_audio/correct.mp3"));

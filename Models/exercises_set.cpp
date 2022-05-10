@@ -18,11 +18,11 @@ bool ExercisesSet::IsZeroAttemptsLeft() const {
   return false;
 }
 
-void ExercisesSet::SetWordsSet(QVector<std::pair<Word, mode>>* input) {
+void ExercisesSet::SetWordsSet(QVector<std::pair<Word, Mode>>* input) {
   words_set_ = input;
 }
 
-QVector<std::pair<Word, mode>>* ExercisesSet::GetWordsSet() {
+QVector<std::pair<Word, Mode>>* ExercisesSet::GetWordsSet() {
   return words_set_;
 }
 
@@ -30,6 +30,6 @@ QString ExercisesSet::GetCorrectAnswer(int index) {
   return words_set_->at(index).first.GetText();
 }
 
-mode ExercisesSet::GetMode(int index) {
+Mode ExercisesSet::GetMode(int index) {
   return words_set_->at(index).second;
 }

@@ -1,5 +1,12 @@
 #include "exercises_set_view.h"
 
+#include <QPainter>
+
+#include "Views/Exercises/animation.h"
+#include "helpers/fonts.h"
+#include "helpers/sizes.h"
+#include "helpers/styles.h"
+
 ExercisesSetView::ExercisesSetView() : stacked_widgets_(new QStackedWidget(this)),
                                        progress_bar_(new QProgressBar(this)),
                                        ready_button_(new QPushButton("Check", this)),
@@ -93,17 +100,17 @@ void ExercisesSetView::SetProgressBarMax(int value) {
   progress_bar_->setMaximum(value);
 }
 
-QString ExercisesSetView::GetAnswer(mode input_mode) {
+QString ExercisesSetView::GetAnswer(Mode input_mode) {
   switch (input_mode) {
-    case pick: {
+    case Mode::kPick: {
       auto* widget = dynamic_cast<PickView*>(stacked_widgets_->currentWidget());
       return widget->GetChecked();
     }
-    case input: {
+    case Mode::kInput: {
       auto widget = dynamic_cast<InputView*>(stacked_widgets_->currentWidget());
       return widget->GetAnswer();
     }
-    case audio: {
+    case Mode::kAudio: {
       auto* widget = dynamic_cast<AudioView*>(stacked_widgets_->currentWidget());
       return widget->GetAnswer();
     }

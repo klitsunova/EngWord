@@ -5,8 +5,6 @@
 #include <QVBoxLayout>
 #include <QWidget>
 
-#include "helpers/fonts.h"
-
 class InputView : public QWidget {
   Q_OBJECT
 

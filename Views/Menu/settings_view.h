@@ -16,7 +16,7 @@
 #include <QVBoxLayout>
 #include <QWidget>
 
-#include "Controllers/settings.h"
+#include "Models/settings.h"
 
 #include "helpers/fonts.h"
 #include "helpers/sizes.h"
@@ -45,10 +45,17 @@ class SettingsView : public QWidget {
   explicit SettingsView(QWidget* parent = nullptr);
   ~SettingsView() override = default;
 
-  level GetLevelSettings() const;
-  bool GetSoundSettings() const;
-  int GetScoreSettings() const;
+  [[nodiscard]] Level GetLevelSettings() const;
+  [[nodiscard]] bool GetSoundSettings() const;
+  [[nodiscard]] int GetScoreSettings() const;
   void GetSettingsView();
+
+ public slots:
+  void ResetScore();
+
+ signals:
+  void ApplyChanges();
+  void CloseSettings();
 
  private:
   void SetStyles();
@@ -66,18 +73,8 @@ class SettingsView : public QWidget {
   void SetDialogButtonStyles();
 
   void SetScoreLabel();
-
- public slots:
-  void ResetScore();
-
- private:
   void contextMenuEvent();
 
- signals:
-  void ApplyChanges();
-  void CloseSettings();
-
- private:
   QGridLayout* layout_;
   QLabel* level_label_;
   QRadioButton* easy_mode_;

@@ -1,15 +1,8 @@
 #pragma once
 
-#include <QFile>
-#include <QJsonArray>
-#include <QJsonDocument>
-#include <QJsonObject>
-#include <QRandomGenerator>
 #include <QVector>
 
-#include <fstream>
-
-#include "Controllers/settings.h"
+#include "settings.h"
 
 class Word {
  public:
@@ -19,14 +12,9 @@ class Word {
       QString audio_path_input);
   ~Word() = default;
 
-  QString GetText() const;
-  void SetText(QString text_input);
-
-  QString GetTranslation() const;
-  void SetTranslation(QString translation_input);
-
-  QString GetAudioPath() const;
-  void SetAudioPath(QString audio_path_input);
+  [[nodiscard]] QString GetText() const;
+  [[nodiscard]] QString GetTranslation() const;
+  [[nodiscard]] QString GetAudioPath() const;
 
  private:
   QString text_;
@@ -40,8 +28,8 @@ class WordSet {
   ~WordSet() = default;
 
   void GetWordsData();
-  QVector<std::pair<Word, mode>>* CreateExercisesSet(
-      mode mode_input,
+  QVector<std::pair<Word, Mode>>* CreateExercisesSet(
+      Mode mode_input,
       int exercise_amount);
 
   QVector<Word>* GetThreeRandomWords(QString text);

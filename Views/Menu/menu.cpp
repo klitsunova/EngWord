@@ -1,5 +1,10 @@
 #include "menu.h"
+
 #include <QString>
+
+#include "helpers/fonts.h"
+#include "helpers/sizes.h"
+#include "helpers/styles.h"
 
 Menu::Menu(QWidget* parent) : QWidget(parent),
                               main_layout_(new QVBoxLayout(this)),

@@ -15,13 +15,7 @@ void Settings::SetScore(int score) {
   settings.setValue("score", score);
 }
 
-void Settings::SetDefaultSettings() {
-  SetSoundSetting(true);
-  SetScore(0);
-  SetLevel(level::easy);
-}
-
-void Settings::SetSettings(level level_input,
+void Settings::SetSettings(Level level_input,
                            bool sound_input,
                            int score_input) {
   SetSoundSetting(sound_input);
@@ -29,15 +23,15 @@ void Settings::SetSettings(level level_input,
   SetLevel(level_input);
 }
 
-level Settings::GetLevelSettings() {
+Level Settings::GetLevelSettings() {
   QSettings settings;
   int level = settings.value("level").toInt();
-  return (level == 0) ? easy : hard;
+  return (level == 0) ? Level::kEasy : Level::kHard;
 }
 
-void Settings::SetLevel(level level_input) {
+void Settings::SetLevel(Level level_input) {
   QSettings settings;
-  settings.setValue("level", level_input);
+  settings.setValue("level", static_cast<int>(level_input));
 }
 
 bool Settings::GetSoundSetting() {
@@ -50,10 +44,10 @@ void Settings::SetSoundSetting(bool sound_input) {
   settings.setValue("sound", sound_input);
 }
 
-mode Settings::ToMode(int int_input) {
+Mode Settings::ToMode(int int_input) {
   switch (int_input) {
-    case 0: return pick;
-    case 1: return input;
-    default: return audio;
+    case 0: return Mode::kPick;
+    case 1: return Mode::kInput;
+    default: return Mode::kAudio;
   }
 }

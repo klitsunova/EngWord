@@ -1,6 +1,6 @@
 #include <QApplication>
 
-#include "Controllers/MainWindow/main_window.h"
+#include "Controllers/main_window.h"
 
 void SetConfiguration() {
   QCoreApplication::setOrganizationName("Klitsunova");

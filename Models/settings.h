@@ -2,16 +2,16 @@
 
 #include <QSettings>
 
-enum level {
-  easy,
-  hard,
+enum class Level {
+  kEasy,
+  kHard,
 };
 
-enum mode {
-  pick,
-  input,
-  audio,
-  mixed,
+enum class Mode {
+  kPick,
+  kInput,
+  kAudio,
+  kMixed,
 };
 
 class Settings {
@@ -20,17 +20,16 @@ class Settings {
   static QString GetScoreString();
   static void SetScore(int score_input);
 
-  static level GetLevelSettings();
-  static void SetLevel(level level_input);
+  static Level GetLevelSettings();
+  static void SetLevel(Level level_input);
 
   static bool GetSoundSetting();
   static void SetSoundSetting(bool sound_input);
 
-  static mode ToMode(int int_input);
+  static Mode ToMode(int int_input);
 
-  static void SetDefaultSettings();
   static void SetSettings(
-      level level_input,
+      Level level_input,
       bool sound_input,
       int score_input);
 };

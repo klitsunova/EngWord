@@ -2,13 +2,9 @@
 
 #include <QLabel>
 #include <QPushButton>
-#include <QSettings>
+
 #include <QVBoxLayout>
 #include <QWidget>
-
-#include "helpers/fonts.h"
-#include "helpers/sizes.h"
-#include "helpers/styles.h"
 
 class Menu : public QWidget {
   Q_OBJECT

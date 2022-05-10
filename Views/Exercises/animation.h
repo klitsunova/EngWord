@@ -1,12 +1,7 @@
 #pragma once
 
 #include <QLabel>
-#include <QPainter>
-#include <QRandomGenerator>
-#include <QTimer>
 #include <QWidget>
-
-#include "helpers/fonts.h"
 
 class Animation : public QWidget {
   Q_OBJECT
@@ -15,7 +10,7 @@ class Animation : public QWidget {
   Animation();
   ~Animation() override = default;
 
-  void paintEvent(QPaintEvent* event);
+  void paintEvent(QPaintEvent* event) override;
 
  private:
   QLabel* label_;
